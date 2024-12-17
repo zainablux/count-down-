@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown website with javascript</title>
+    <meta name="description" content="This website is created with html, css, javascript to notify user">
+    <meta name="keyword" content="html, github, css. web, count, js, javascript web development">
+    <link rel="icon" href="" type="icon/png">
+    
+    <!-- syling link -->
+     <!-- <link rel="stylesheet" href="../css/Styles.css"> -->
+
+     <!-- google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url(images/newyear.jpeg);               
+    background-size: cover;
+    background-position: center;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+.container {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+.container h1{
+    margin-top: -50px;
+    font-size: 5rem;
+    color: rgb(245, 161, 5);
+    text-transform: uppercase;
+}
+.container h2{
+    margin-top: 10px;
+    font-size: 2.9rem;
+    font-weight: 300;
+    font-style: inherit;
+    text-transform: uppercase;
+}
+.container h2 span{
+    color: rgb(245, 161, 5);
+    font-weight: 500;
+    font-size: 2.9rem;
+
+
+}
+.count{
+margin: 40px 0;
+}
+.countd{
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    border-style:dashed;
+    margin: 10px 30px;
+    border-radius: 50%;
+    text-transform: uppercase;
+    overflow: hidden;
+    box-shadow: 0 ipx 2px #000;
+    -webkit-box-reflect: below 1px linear-gradient(transparent,#0008);
+    border-color:rgb(245, 161, 5) ;
+    font-size: 1rem;
+    margin-top: 10px;
+    /* color: rgb(245, 161, 5); */
+}
+.countd span{
+    display: block;
+    font-size: 1.8rem;
+    margin-top: 14px;
+    margin-bottom: 13px;
+   
+}
+
+/* Media Queries */
+/* @media (max-width: 768px) { */
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 10px;
+    }
+
+    .countd {
+        font-size: 1.2rem;
+        min-width: 80px;
+        width: 119px;
+        height: 119px;
+    }
+
+    span {
+        font-size: 2rem;
+    }
+    
+
+   
+
+
+    @media screen and (max-width: 900px){
+        
+        .title h1 {
+        font-size: 4.5rem !important;
+        /* color: pink; */
+    }
+
+    .title h2 {
+        font-size: 3rem !important;
+        margin-bottom: -20px !important;
+    }
+
+    .title h2 span {
+        font-size: 3rem !important;
+    }
+
+    .countd {
+        font-size: 1rem;
+        width: 127px !important;
+        height: 122px !important;
+    }
+
+}
+
+        @media screen and (max-width: 390px) {
+    .title h1 {
+        font-size: 3rem !important;
+        /* color: pink; */
+    }
+
+    .title h2 {
+        font-size: 1.7rem !important;
+        margin-bottom: -20px !important;
+    }
+
+    .title h2 span {
+        font-size: 1.7rem !important;
+    }
+
+    .countd {
+        font-size: 1rem;
+        width: 125px !important;
+        height: 120px !important;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .title h1 {
+        font-size: 2.9rem !important;
+        /* color: pink; */
+    }
+
+    .title h2 {
+        font-size: 1.6rem !important;
+        margin-bottom: -20px !important;
+        /* color: pink; */
+    }
+
+    .title h2 span {
+        font-size: 1.6rem !important;
+    }
+
+    
+    .count {
+        flex-direction: column !important;
+        gap: 10px !important; 
+    }
+
+    .countd {
+        font-size: 1rem !important;
+        width: 110px !important;
+        height: 110px !important;
+    }
+
+    .count span {
+        font-size: 1.5rem !important;
+        margin-bottom: 7px; 
+    }
+}
+
+@media screen and (max-width: 1024px){
+    .title h1 {
+        font-size: 5.2rem;
+        /* color: pink; */
+    }
+
+    .title h2 span {
+        font-size: 4rem; 
+    }
+    .title h2{
+        font-size: 4rem; 
+        margin-bottom: -20px;
+    }
+
+    .count {
+        flex-direction: column;
+        gap: 10px; 
+        /* margin-top: 5px; */
+    }
+
+    .countd {
+        font-size: 22px; 
+        /* margin-top: 1p; */
+        width: 135px;
+        height: 135px;
+        /* margin-bottom: 5px; */
+
+    }
+
+    .count span {
+        font-size: 2rem;
+        margin-bottom: 7px; 
+        margin-bottom: 10px;
+
+    }
+
+}
+
+
+
+
+
+</style>
+<body>
+<div class="container">
+    <div class="title">
+    <h1>2025</h1>
+    <h2>Countdown of <span>New Year</span></h2>
+     </div>
+    <div class="count">
+        <div class="countd"><span id="day">00</span>Days</div>
+        <div class="countd"><span id="hour">00</span>Hour</div>
+        <div class="countd"><span id="minutes">00</span>Minutes</div>
+        <div class="countd"><span id="seconds">00</span>seconds</div>
+    </div>
+</div>
+
+<script>
+    function updateCountdown() {
+        const newYear = new Date('January 1, 2025 00:00:00').getTime();
+        const now = new Date().getTime();
+        const timeDifference = newYear - now;
+
+        if (timeDifference >= 0) {
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById('day').textContent = days < 10 ? `0${days}` : days;
+            document.getElementById('hour').textContent = hours < 10 ? `0${hours}` : hours;
+            document.getElementById('minutes').textContent = minutes < 10 ? `0${minutes}` : minutes;
+            document.getElementById('seconds').textContent = seconds < 10 ? `0${seconds}` : seconds;
+        } else {
+            // If the countdown is over
+            document.querySelector('.count').innerHTML = "<h3>Happy New Year 2025!</h3>";
+            clearInterval(countdownInterval);
+        }
+    }
+
+    // Update the countdown every second
+    const countdownInterval = setInterval(updateCountdown, 1000);
+
+    // Initial call to display the countdown immediately
+    updateCountdown();
+</script>
+</body>
+</html>
